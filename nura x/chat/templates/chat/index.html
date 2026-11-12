@@ -1,0 +1,62 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nura X</title>
+  <meta name="description" content="Nura X — Intentional Intelligence. AI voice & chat assistant built by Prof. Rashidah Funke Olanrewaju." />
+  <meta name="theme-color" content="#0b5d66" />
+  <link rel="icon" type="image/png" href="{% static 'chat/favicon.png' %}" />
+  <link rel="apple-touch-icon" href="{% static 'chat/nura-x-logo.png' %}" />
+  <meta property="og:title" content="Nura X — Intentional Intelligence" />
+  <meta property="og:image" content="{% static 'chat/nura-x-logo.png' %}" />
+  <link rel="stylesheet" href="{% static 'chat/style.css' %}" />
+</head>
+<body data-avatar="{% static 'chat/nura-x-avatar.png' %}">
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <img class="logo" src="{% static 'chat/nura-x-logo.png' %}" alt="Nura X logo" width="48" height="48" />
+        <div>
+          <h1>NURA<span class="x">-X</span></h1>
+          <p class="sub">Intentional Intelligence</p>
+        </div>
+      </div>
+      <div class="controls">
+        <select id="voiceSelect" class="voice-select" title="Nura X's voice" aria-label="Nura X's voice"></select>
+        <button id="speakToggle" class="icon-btn" title="Read replies aloud" aria-pressed="true">🔊</button>
+        <button id="clearBtn" class="icon-btn" title="New conversation">↺</button>
+      </div>
+    </header>
+
+    <main id="chat" class="chat" aria-live="polite">
+      <section class="hero intro">
+        <img src="{% static 'chat/nura-x-logo.png' %}" alt="" width="150" height="150" />
+        <p class="hero-by">Built by <strong>Prof. Rashidah Funke Olanrewaju</strong></p>
+      </section>
+      <div class="msg bot intro">
+        <img class="avatar" src="{% static 'chat/nura-x-avatar.png' %}" alt="" width="34" height="34" />
+        <div class="bubble">Hello! I'm <strong>Nura X</strong>, the AI assistant built by Prof. Rashidah Funke Olanrewaju. Ask me about her research, innovations, awards, the EDC at NSUK, or anything else. You can type, or tap <strong>Voice chat</strong> to talk to me.</div>
+      </div>
+    </main>
+
+    <section id="voicePanel" class="voice-panel" hidden>
+      <div id="orb" class="orb" title="Tap to interrupt">
+        <img src="{% static 'chat/nura-x-portrait.png' %}" alt="Nura X" width="150" height="150" />
+      </div>
+      <p id="voiceStatus" class="voice-status">Listening…</p>
+      <p id="interim" class="interim"></p>
+      <button id="endVoice" class="end-btn">End voice chat</button>
+    </section>
+
+    <form id="composer" class="composer">
+      <button type="button" id="micBtn" class="icon-btn mic" title="Dictate a message">🎤</button>
+      <input id="input" type="text" placeholder="Message Nura X…" autocomplete="off" />
+      <button type="submit" id="sendBtn" class="send">Send</button>
+      <button type="button" id="voiceBtn" class="voice-btn" title="Hands-free voice conversation">🎙️ Voice chat</button>
+    </form>
+    <p id="note" class="note"></p>
+  </div>
+  <script src="{% static 'chat/app.js' %}"></script>
+</body>
+</html>
